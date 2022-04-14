@@ -4,9 +4,8 @@ const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 const questions = [{
-    console.log(questions)
     type: "input",
-    name: "Project Title"
+    name: "Project Title",
     message: "What is your project's title?",
     validate: projectInput => {
     if(projectInput){
@@ -16,7 +15,36 @@ const questions = [{
         return false;
       }
     }
-}];
+},
+{
+    type: 'input',
+    name: 'Description',
+    message: 'Provide a short description of your project',
+    validate: descripInput => {
+        if(descripInput){
+            return true;
+        }else{
+            console.log("Please enter your project's description");
+            return false;
+        }
+    }
+},
+
+];
+console.log(questions);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
