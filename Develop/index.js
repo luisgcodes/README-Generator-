@@ -6,9 +6,11 @@ const Choices = require('inquirer/lib/objects/choices');
 
 
 // TODO: Create an array of questions for user input
-const questions = [{
+inquirer
+  .prompt([
+{
     type: "input",
-    name: "Project Title",
+    name: 'ProjectTitle',
     message: "What is your project's title?",
 },
 {
@@ -18,7 +20,7 @@ const questions = [{
 },
 {
     type: 'input',
-    name: 'Table of Contents',
+    name: 'tableOfContents',
     message: 'Provide a table of contents.',
 },
 {
@@ -37,33 +39,34 @@ const questions = [{
     message: 'Provide a list of your contributors, if any.'
 },
 {
-    type: 'input',
+    type: 'checkbox',
     name: 'License',
-    message: 'Choose a license',
-    Choices: ['GPL', 'MIT', 'Apache', 'MS-PL', 'No license'],
+    message: 'Choose a license badge',
+    choices:['GPL', 'MIT', 'Apache', 'MS-PL', 'No license'],
 },
 
-];
-console.log(questions);
-
-
-
-
-
-
-
-
-
-
-
+])
+.then(answers => {
+    console.info(answers);
+  });
 
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err)
+          console.log(err);
+        else {
+          console.log("File Created!");
+        }
+      });
+};
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    
+}
 
 // Function call to initialize app
 init();
