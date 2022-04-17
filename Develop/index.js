@@ -42,12 +42,12 @@ inquirer
     type: 'checkbox',
     name: 'License',
     message: 'Choose a license badge',
-    choices:['GPL', 'MIT', 'Apache', 'MS-PL', 'No license'],
+    choices:['GPL', 'MIT', 'APACHE 2.0', 'BSD 3', 'No license'],
 },
 
 ])
 .then(answers => {
-    console.info(answers);
+    // console.info(answers);
   });
 
 
@@ -65,7 +65,12 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    
+    inquirer.prompt.then((data) => {
+      const readME = generateMarkdown(data);
+      writeToFile
+    }
+
+    )
 }
 
 // Function call to initialize app
