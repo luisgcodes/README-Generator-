@@ -38,7 +38,7 @@ const questions =[
 },
 {
     type: 'checkbox',
-    name: 'License',
+    name: 'license',
     message: 'Choose a license badge',
     choices:['GPL', 'MIT', 'APACHE', 'BSD 3', 'No license'],
 },
