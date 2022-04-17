@@ -1,13 +1,11 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
-const Choices = require('inquirer/lib/objects/choices');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
 // TODO: Create an array of questions for user input
-inquirer
-  .prompt([
+const questions =[
 {
     type: "input",
     name: 'ProjectTitle',
@@ -42,13 +40,10 @@ inquirer
     type: 'checkbox',
     name: 'License',
     message: 'Choose a license badge',
-    choices:['GPL', 'MIT', 'APACHE 2.0', 'BSD 3', 'No license'],
+    choices:['GPL', 'MIT', 'APACHE', 'BSD 3', 'No license'],
 },
 
-])
-.then(answers => {
-    // console.info(answers);
-  });
+]
 
 
 
@@ -65,12 +60,10 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt.then((data) => {
-      const readME = generateMarkdown(data);
-      writeToFile
-    }
-
-    )
+  inquirer.prompt(questions).then((data) => {
+    const pageReadME = generateMarkdown(data);
+    writeToFile("./Read/ReadME.md", pageReadME);
+  });
 }
 
 // Function call to initialize app
