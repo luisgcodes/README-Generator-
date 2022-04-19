@@ -42,7 +42,11 @@ const questions =[
     message: 'Choose a license badge',
     choices:['GPL', 'MIT', 'APACHE', 'BSD 3', 'No license'],
 },
-
+{
+    type: 'input',
+    name: 'Test',
+    message: 'What is your testing process?',
+}
 ]
 
 
