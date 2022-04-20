@@ -37,16 +37,31 @@ const questions =[
     message: 'Provide a list of your contributors, if any.'
 },
 {
-    type: 'checkbox',
-    name: 'license',
-    message: 'Choose a license badge',
-    choices:['GPL', 'MIT', 'APACHE', 'BSD 3', 'No license'],
+  type: 'input',
+  name: 'Test',
+  message: 'What is your testing process?',
 },
 {
-    type: 'input',
-    name: 'Test',
-    message: 'What is your testing process?',
-}
+    type: 'checkbox',
+    name: 'license',
+    message: 'Choose a license badge.',
+    choices:['GPL', 'MIT', 'APACHE', 'BSD 3', 'None']
+},
+{
+  type: "input",
+  name: "githubUsername",
+  message: "What is your github username?",
+},
+{
+  type: "input",
+  name: "githubLink",
+  message: "What is your github link?",
+},
+{
+  type: "input",
+  name: "email",
+  message: "What is your email?",
+},
 ]
 
 

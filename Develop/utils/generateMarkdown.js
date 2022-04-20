@@ -1,19 +1,12 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license === "GPL") {
-    return "[![License: GPL](https://img.shields.io/static/v1?label=License&message=GPL3.0&color=blueviolet&style=plastic)";
-  }else if (license === "MIT") {
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-  }else if (license == "APACHE"){
-    return `[![License: APACHE](https://img.shields.io/static/v1?label=License&message=APACHE2.0&color=blueviolet&style=plastic)`
-  }else if (license == "BSD 3"){
-      return `[![License: BSD 3](https://img.shields.io/static/v1?label=License&message=BSD3&color=blueviolet&style=plastic)`
-  }else if (license === "No license") {
-    return ``;
-  }
+  if(license === 'None'){
+    return '';
 }
+    return `![GitHub license](https://img.shields.io/badge/License-${license}-red.svg)`
 
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -29,10 +22,10 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (!license) {
-    return "";
+  if(license === 'None'){
+    return  '';
   } else {
-    return `License: ${license}`;
+    return `This project is licensed under ${license}. `;
   }
 }
 
@@ -42,7 +35,8 @@ function generateMarkdown(data) {
   
   # ${data.ProjectTitle}
 
-  ${data.license}
+
+  ${renderLicenseBadge(data.license)}
 
 
   ## Description  
@@ -52,8 +46,8 @@ function generateMarkdown(data) {
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
-* [License](#license)
 * [Test](#test)
+* [License](#license)
 
 ## Installation
   ${data.Installation}
@@ -64,11 +58,20 @@ function generateMarkdown(data) {
 ## Credits
   ${data.Credits}
 
-## License
-  ${renderLicenseSection(data.License)}
-
 ## Test
   ${data.Test}
+
+## License
+  ${renderLicenseSection(data.license)}
+
+## Questions
+ If you have any questions you can reach me here:
+### GitHub Username
+  ${data.githubUsername}
+### GitHub Link
+  ${data.githubLink}
+### Email
+  ${data.email}
 `;
 }
 
