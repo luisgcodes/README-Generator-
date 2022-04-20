@@ -19,6 +19,9 @@ Using Node.js and Inquirer, we can generate a readme file. It is a simple, strai
 ## Built With
  - Node.js
  - Inquirer.js
+
+## Walkthrough Video
+https://drive.google.com/file/d/1kmRBCd68FT1AepQkvm7x3m5VUTEo6mhY/view
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
